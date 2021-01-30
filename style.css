@@ -104,6 +104,12 @@ nav ul li a:hover, a.active{
     cursor: pointer;
     
 }
+.fa-minus{
+    color: red;
+}
+.fa-plus{
+    color: green;
+}
 .booking-form .inputs{
     display: grid;
     grid-template-columns: 1fr 1fr;

@@ -129,13 +129,10 @@
         };
 
         function totalCost(){
-            const firstClassInput = document.getElementById('firstClass-ticket');
-            const firstClassCount = parseInt(firstClassInput.value);
+            const firstClassInput = convertToNumber('firstClass');
+            const economyInput = convertToNumber('economy');
 
-            const economyInput = document.getElementById('economy-ticket');
-            const economyCount = parseInt(economyInput.value);
-
-            subTotal = firstClassCount * 150 + economyCount * 100;
+            subTotal = firstClassInput * 150 + economyInput * 100;
             document.getElementById('sub-total').innerText = '$' + subTotal;
 
             const vatInput = document.getElementById('vat');
@@ -147,6 +144,12 @@
             const totalCount = parseInt(totalInput.innerText);
             const grandTotal = totalVat + subTotal;
             document.getElementById('total').innerText = '$' + grandTotal;
+        };
+        
+        function convertToNumber(booking){
+            const ticketInput = document.getElementById(booking + "-ticket");
+        const ticketCount = parseInt(ticketInput.value);
+        return ticketCount;
         };
 
 
